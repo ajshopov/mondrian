@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <title>Mondrian Generator</title>
 </head>
 <body>
-    <h1>Mondrian Generator</h1>
-    <p>Inspired by a tutorial from <a href="https://generativeartistry.com">Generative Artistry</a>.</p>
-    <button id="regenerate">Regenerate</button>
-    <canvas></canvas>
+    <header>
+        <h1>Mondrian Generator</h1>
+        <p>Inspired by a tutorial from <a href="https://generativeartistry.com">Generative Artistry</a>. Use the sliders to experiment with different shapes and sizes.</p>
+        <div class="lines">
+            <label for="lines">more lines</label>
+            <input type="range" name="lines" min="0.5" max="0.9" step="0.01" value="0.75" id="lines">
+            <label for="">less lines</label>
+        </div>
+        <div class="squares">
+            <label for="squares">larger grid</label>
+            <input type="range" name="squares" min="5" max="19" step="1" default="13">
+            <label for="">smaller grid</label>
+        </div>
+        <button id="regenerate" autofocus>Regenerate</button>
+    </header>
+    <main>
+        <canvas></canvas>
+    </main>
+
     <script src="app.js"></script>
 </body>
 </html>

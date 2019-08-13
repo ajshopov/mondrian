@@ -1,20 +1,54 @@
-/****** Elad Shechter's RESET *******/
-/*** box sizing border-box for all elements ***/
-*,
-*::before,
-*::after{box-sizing:border-box;}
-a{text-decoration:none; color:inherit; cursor:pointer;}
-button{background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
-figure{margin:0;}
-input::-moz-focus-inner {border:0; padding:0; margin:0;}
-ul, ol, dd{margin:0; padding:0; list-style:none;}
-h1, h2, h3, h4, h5, h6{margin:0; font-size:inherit; font-weight:inherit;}
-p{margin:0;}
-cite {font-style:normal;}
-fieldset{border-width:0; padding:0; margin:0;}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
-/****************/
+header{
+    text-align: center;
+}
 
 h1{
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+main{
+    margin: 0 auto;
+    padding: 8px;
+    max-width: 600px;
+}
+
+canvas{
+    width: 100%;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+button{
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    padding: 14px;
+    border-radius: 3px;
+    margin: auto;
+}
+
+p{
+    line-height: 24px;
+}
+
+.lines, .squares{
+    line-height: 24px;
+    display: flex;
+    margin: 0 auto;
+    width: 320px;
+    justify-content: center;
+}
+
+input {
+  justify-content: center;
+  width: 140px;
+}
+
+label{
+    flex: 1;
 }

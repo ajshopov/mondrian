@@ -1,11 +1,19 @@
 const button = document.getElementById('regenerate');
 const canvas = document.querySelector('canvas');
+
+const lineInput = document.querySelector('.lines input');
+const squareInput = document.querySelector('.squares input');
+
+let lines = 0.75;
+let grid = 13;
+lineInput.addEventListener('input', () => {lines = lineInput.value});
+squareInput.addEventListener('input', () => {grid = squareInput.value});
+
 const ctx = canvas.getContext('2d');
 const size = 600;
 canvas.height = size;
 canvas.width = size;
 ctx.lineWidth = 8;
-const step = size / 13;
 const white = '#F2F5F1';
 const colors = ['#D40920', '#1356A2', '#F7D842'];
 let squares;
@@ -21,7 +29,7 @@ function generate() {
     height: size
   }];
 
-  for (let i = 0; i <= size; i+= step) {
+  for (let i = 0; i <= size; i+= (size / grid)) {
     splitSquaresAt({ y: i });
     splitSquaresAt({ x: i });
   }
@@ -32,7 +40,6 @@ function generate() {
 function draw() {
   for (let i = 0; i < colors.length; i++) {
     squares[Math.floor(Math.random() * squares.length)].color = colors[i];
-    console.log(squares)
   }
 
   for (let i = 0; i < squares.length; i++) {
@@ -61,14 +68,15 @@ function splitSquaresAt(coordinates) {
 
     if (x && x > square.x && x < square.x + square.width) {
       // randomly delete square, to replace with half-size A and B
-      if (Math.random() > 0.75) {
+      if (Math.random() > lines) {
+        console.log(lines)
         squares.splice(i, 1);
         splitOnX(square, x);
       }
     }
 
     if (y && y > square.y && y < square.y + square.height) {
-      if (Math.random() > 0.75) {
+      if (Math.random() > lines) {
         squares.splice(i, 1);
         splitOnY(square, y);
       }
