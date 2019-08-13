@@ -69,7 +69,6 @@ function splitSquaresAt(coordinates) {
     if (x && x > square.x && x < square.x + square.width) {
       // randomly delete square, to replace with half-size A and B
       if (Math.random() > lines) {
-        console.log(lines)
         squares.splice(i, 1);
         splitOnX(square, x);
       }
